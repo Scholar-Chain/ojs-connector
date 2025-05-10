@@ -20,3 +20,5 @@ Before running the script, make sure your system has:
 ```bash
 git clone https://github.com/Scholar-Chain/ojs-connector.git
 cd ojs-connector
+chmod +x installation.sh
+./installation.sh
