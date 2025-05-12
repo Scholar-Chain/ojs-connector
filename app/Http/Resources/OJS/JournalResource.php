@@ -47,6 +47,10 @@ class JournalResource extends JsonResource
         }
 
         $result['settings'] = $this->whenLoaded('journalSettings');
+        $result['name'] = $this->journalSettings()
+            ->where('setting_name', 'name')
+            ->first()
+            ->setting_value;
 
         return $result;
     }
