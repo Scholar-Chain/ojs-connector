@@ -55,7 +55,7 @@ class AuthController extends Controller
             });
             DB::commit();
             DB::connection('ojs')->commit();
-            return response()->json(['status' => 200, 'data' => new UserResource($user, true)]);
+            return response()->json(new UserResource($user, true));
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             DB::connection('ojs')->rollback();
             DB::rollback();
